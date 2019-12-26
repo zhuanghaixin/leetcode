@@ -68,13 +68,38 @@ var removeDuplicates = function (arr) {
   //   for (var j = i + 1; j < arr.length; j++) {
   //     if (arr[i] == arr[j]) { //第一个等同于第二个，splice方法删除第二个
   //       arr.splice(j, 1);
-  //       j--;
+  //       j--
   //     }
   //   }
   // }
-  return arr.length
-
-
+  // return arr.length
+  //第三种 利用indexOf去重
+  // var array = [];
+  // for (var i = 0; i < arr.length; i++) {
+  //   if (array.indexOf(arr[i]) === -1) {
+  //     array.push(arr[i])
+  //   }
+  // }
+  // return array.length;
+  //第四种 sort
+  // arr = arr.sort()
+  // var arrry = [arr[0]];
+  // for (var i = 1; i < arr.length; i++) {
+  //   if (arr[i] !== arr[i - 1]) {
+  //     arrry.push(arr[i]);
+  //   }
+  // }
+  // return arrry.length;
+  //第五种 双指针
+  let i = 0
+  for (j = 1; j < arr.length; j++) {
+    if (arr[j] !== arr[i]) {
+      i++
+      arr[i] = arr[j]
+    }
+  }
+  return i + 1
 };
-console.log(removeDuplicates([0, 0, 1, 1, 1, 2, 2, 3, 3, 4]));
+// 0222233
+console.log(removeDuplicates([1, 1, 2]));
 // @lc code=end
