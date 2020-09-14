@@ -14,4 +14,3 @@ const insertionSort=(arr:number[])=>{
 }
 
 console.log(insertionSort([4,5,4,3,2,1,3,2,1,5,7,4]));
-
